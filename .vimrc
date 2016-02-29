@@ -99,6 +99,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 " disable HAML syntax checker
 let g:loaded_syntastic_haml_haml_checker = ['']
 let g:loaded_syntastic_haml_haml_lint_checker = ['']
+
+" disable SCSS syntax checker
+let g:loaded_syntastic_scss_sass_checker = ['']
+let g:loaded_syntastic_scss_scss_lint_checker = ['']
 "=============================================================================
 
 
