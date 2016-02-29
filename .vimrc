@@ -95,6 +95,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
+
+" disable HAML syntax checker
+let g:loaded_syntastic_haml_haml_checker = ['']
+let g:loaded_syntastic_haml_haml_lint_checker = ['']
 "=============================================================================
 
 
