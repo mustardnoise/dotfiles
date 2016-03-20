@@ -2,12 +2,6 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
 " Last Change:  18 October 2015
 
-set background=dark
-hi clear
-if exists("syntax_on")
-  syntax reset
-endif
-
 let g:colors_name = "mustardnoise-railscasts"
 
 hi link htmlTag                         xmlTag
