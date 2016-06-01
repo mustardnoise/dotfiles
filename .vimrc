@@ -244,4 +244,9 @@ nmap <Leader>t :call RunCurrentSpecFile()<CR>
 nmap <Leader>s :call RunNearestSpec()<CR>
 nmap <Leader>l :call RunLastSpec()<CR>
 nmap <Leader>a :call RunAllSpecs()<CR>
+" force to not use arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 "------------------------------------------------------------------------------
