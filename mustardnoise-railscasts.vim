@@ -46,8 +46,9 @@ highlight Title                         ctermfg=15
 highlight Type                          ctermfg=167  cterm=NONE
 highlight Visual                        ctermbg=60
 
-highlight DiffAdd                       ctermfg=7    ctermbg=71
-highlight DiffDelete                    ctermfg=7    ctermbg=52
+highlight DiffAdd                       ctermfg=NONE ctermbg=22
+highlight DiffDelete                    ctermfg=NONE ctermbg=52
+highlight DiffChange                    ctermfg=NONE ctermbg=5
 highlight Special                       ctermfg=167
 
 highlight pythonBuiltin                 ctermfg=73   cterm=NONE
