@@ -8,7 +8,7 @@ hi link htmlTag                         xmlTag
 hi link htmlTagName                     xmlTagName
 hi link htmlEndTag                      xmlEndTag
 
-highlight Normal                        ctermfg=254 ctermbg=234
+highlight Normal                        ctermfg=254 ctermbg=235
 
 highlight Cursor                        ctermfg=0   ctermbg=15
 highlight CursorLine                    ctermbg=237 cterm=NONE
