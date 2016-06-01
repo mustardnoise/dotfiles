@@ -17,7 +17,7 @@ set ts=2 sw=2 et
 set regexpengine=1
 set ttyfast
 set hid
-" set shell=zsh
+set shell=zsh
 set norelativenumber
 set noerrorbells
 set hlsearch
@@ -219,8 +219,8 @@ let ruby_no_expensive = 1
 "----------------------------------- FASTFOLD ---------------------------------
 " https://github.com/Konfekt/FastFold
 set foldmethod=indent
-set foldminlines=6
-set foldnestmax=10
+set foldminlines=10
+set foldnestmax=20
 let ruby_fold = 1
 let javaScript_fold = 1
 let vimsyn_folding = 'af'
