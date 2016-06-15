@@ -18,7 +18,8 @@ set regexpengine=1
 set ttyfast
 set hid
 set shell=zsh
-set norelativenumber
+" set norelativenumber
+set relativenumber
 set noerrorbells
 set hlsearch
 set incsearch
@@ -27,6 +28,7 @@ set magic
 " set noeol
 " set binary
 set lazyredraw
+set showcmd
 filetype plugin indent on
 syntax on
 colorscheme mustardnoise-railscasts
