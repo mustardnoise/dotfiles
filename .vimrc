@@ -9,7 +9,7 @@ set list listchars=tab:\ \ ,trail:·
 set textwidth=80
 set colorcolumn=+1
 set cursorline
-set mouse=a
+" set mouse=a
 set laststatus=2
 set nowrap
 set clipboard=unnamed
