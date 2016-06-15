@@ -170,6 +170,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-dotenv'
   Plug 'ryanoasis/vim-devicons'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'vim-airline/vim-airline'
@@ -241,11 +242,39 @@ set viminfo^=%
 
 
 "----------------------------------- MAPPINGS ---------------------------------
+let mapleader = "\<Space>"
+
 nmap <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>t :call RunCurrentSpecFile()<CR>
 nmap <Leader>s :call RunNearestSpec()<CR>
 nmap <Leader>l :call RunLastSpec()<CR>
 nmap <Leader>a :call RunAllSpecs()<CR>
+
+" Next and previous buffer
+map <Leader>bn :bnext<CR>
+map <Leader>bp :bprevious<CR>
+
+" Run rails console with Foreman
+map <Leader>rc :Dispatch foreman run rails c<CR>
+
+" Run rake db:migrate
+map <Leader>rdm :Rake db:migrate<CR>
+
+" Run bundle install
+map <Leader>bi :Bundle install<CR>
+
+" Run Rubocop
+map <Leader>ru :Rubocop<CR>
+
+" Close file
+map <Leader>q :q<CR>
+
+" Save file
+map <Leader>w :w<CR>
+
+" Save and close file
+map <Leader>wq :wq<CR>
+
 " force to not use arrow keys
 map <up> <nop>
 map <down> <nop>
