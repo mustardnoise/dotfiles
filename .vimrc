@@ -260,6 +260,9 @@ map <Leader>rc :Dispatch foreman run rails c<CR>
 " Run rake db:migrate
 map <Leader>rdm :Rake db:migrate<CR>
 
+" Run rake routes
+map <Leader>rr :Rake routes<CR>
+
 " Run bundle install
 map <Leader>bi :Bundle install<CR>
 
