@@ -39,25 +39,6 @@ let g:ackprg = 'ag --vimgrep'
 "------------------------------------------------------------------------------
 
 
-"------------------------------------ CTRL-P ----------------------------------
-" https://github.com/ctrlpvim/ctrlp.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
-endif
-"------------------------------------------------------------------------------
-
-
 "---------------------------------- AIRLINE -----------------------------------
 " https://github.com/vim-airline/vim-airline
 let g:airline_powerline_fonts = 1
@@ -188,8 +169,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'Yggdroot/indentLine'
   Plug 'Konfekt/FastFold'
   Plug 'Raimondi/delimitMate'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'wincent/command-t'
   Plug 'chriskempson/base16-vim'
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
