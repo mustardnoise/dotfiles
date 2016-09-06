@@ -165,6 +165,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'moll/vim-bbye'
+  Plug 'sjl/gundo.vim'
   Plug 'janko-m/vim-test'
   Plug 'benmills/vimux'
 call plug#end()
@@ -260,6 +261,8 @@ map <Leader>w :w<CR>
 " Save and close file
 map <Leader>wq :wq<CR>
 
+" Open Gundo panel
+nnoremap <leader>gdt :GundoToggle<CR>
 " force to not use arrow keys
 map <up> <nop>
 map <down> <nop>
