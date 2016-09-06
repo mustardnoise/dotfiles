@@ -164,9 +164,13 @@ call plug#begin('~/.vim/bundle')
   Plug 'chriskempson/base16-vim'
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'elixir-lang/vim-elixir'
   Plug 'moll/vim-bbye'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
   Plug 'sjl/gundo.vim'
   Plug 'janko-m/vim-test'
+  Plug 'terryma/vim-multiple-cursors'
   Plug 'benmills/vimux'
 call plug#end()
 "------------------------------------------------------------------------------
@@ -263,6 +267,10 @@ map <Leader>wq :wq<CR>
 
 " Open Gundo panel
 nnoremap <leader>gdt :GundoToggle<CR>
+
+" Git blame
+nmap <Leader>gb :Gblame<CR>
+
 " force to not use arrow keys
 map <up> <nop>
 map <down> <nop>
