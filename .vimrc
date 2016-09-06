@@ -164,6 +164,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'chriskempson/base16-vim'
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'moll/vim-bbye'
   Plug 'janko-m/vim-test'
   Plug 'benmills/vimux'
 call plug#end()
@@ -228,6 +229,9 @@ nmap <silent> <Leader>g :TestVisit<CR>
 " Next and previous buffer
 map <Leader>bn :bnext<CR>
 map <Leader>bp :bprevious<CR>
+
+" Delete Buffer
+map <Leader>bd :Bdelete<CR>
 
 " Run rails console with Foreman
 map <Leader>rc :call VimuxRunCommand("clear; foreman run rails console")<CR>
