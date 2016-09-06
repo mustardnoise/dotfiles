@@ -124,13 +124,6 @@ let g:indentLine_faster = 1
 "------------------------------------------------------------------------------
 
 
-"---------------------------------- RSPEC -------------------------------------
-" https://github.com/thoughtbot/vim-rspec
-let g:rspec_runner = "os_x_iterm2"
-noremap <C-@> <C-x><C-o>
-"------------------------------------------------------------------------------
-
-
 "--------------------------------- VIM-PLUG -----------------------------------
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
@@ -138,7 +131,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'ecomba/vim-ruby-refactoring'
   Plug 'vim-ruby/vim-ruby'
   Plug 'ngmy/vim-rubocop'
-  Plug 'thoughtbot/vim-rspec'
   Plug 'jelera/vim-javascript-syntax'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-surround'
@@ -172,6 +164,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'chriskempson/base16-vim'
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'janko-m/vim-test'
 call plug#end()
 "------------------------------------------------------------------------------
 
@@ -224,10 +217,12 @@ set viminfo^=%
 let mapleader = "\<Space>"
 
 nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>t :call RunCurrentSpecFile()<CR>
-nmap <Leader>s :call RunNearestSpec()<CR>
-nmap <Leader>l :call RunLastSpec()<CR>
-nmap <Leader>a :call RunAllSpecs()<CR>
+
+nmap <silent> <Leader>s :TestNearest<CR>
+nmap <silent> <Leader>t :TestFile<CR>
+nmap <silent> <Leader>a :TestSuite<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>g :TestVisit<CR>
 
 " Next and previous buffer
 map <Leader>bn :bnext<CR>
