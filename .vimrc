@@ -165,6 +165,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'rking/ag.vim'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'janko-m/vim-test'
+  Plug 'benmills/vimux'
 call plug#end()
 "------------------------------------------------------------------------------
 
@@ -229,13 +230,16 @@ map <Leader>bn :bnext<CR>
 map <Leader>bp :bprevious<CR>
 
 " Run rails console with Foreman
-map <Leader>rc :Dispatch foreman run rails c<CR>
+map <Leader>rc :call VimuxRunCommand("clear; foreman run rails console")<CR>
 
 " Run rake db:migrate
 map <Leader>rdm :Rake db:migrate<CR>
 
 " Run rake routes
-map <Leader>rr :Rake routes<CR>
+map <Leader>rr :call VimuxRunCommand("clear; bundle exec rake routes")<CR>
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " Run bundle install
 map <Leader>bi :Bundle install<CR>
