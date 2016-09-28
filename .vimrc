@@ -75,6 +75,9 @@ execute NERDTreeHighlightFile('haml',   '169',     'none')
 execute NERDTreeHighlightFile('css',    '2',       'none')
 execute NERDTreeHighlightFile('scss',   '99',      'none')
 execute NERDTreeHighlightFile('js',     '208',     'none')
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 "------------------------------------------------------------------------------
 
 
