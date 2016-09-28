@@ -1,5 +1,6 @@
 filetype off
 set nocompatible
+set backspace=indent,eol,start
 set history=200
 set ruler
 set number
