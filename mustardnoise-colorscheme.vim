@@ -1,8 +1,8 @@
-" Name:         mustardnoise-railscasts.vim
+" Name:         mustardnoise-colorscheme.vim
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  18 October 2015
+" Last Change:  12 October 2016
 
-let g:colors_name = "mustardnoise-railscasts"
+let g:colors_name = "mustardnoise-colorscheme"
 
 hi link htmlTag                         xmlTag
 hi link htmlTagName                     xmlTagName
@@ -39,7 +39,7 @@ highlight PMenuSbar                     ctermbg=64
 highlight PMenuThumb                    ctermbg=240
 
 highlight PreProc                       ctermfg=103
-highlight Search                        ctermfg=NONE ctermbg=235 cterm=underline
+highlight Search                        ctermfg=0 ctermbg=3
 highlight Statement                     ctermfg=172  cterm=NONE
 highlight String                        ctermfg=107
 highlight Title                         ctermfg=15
