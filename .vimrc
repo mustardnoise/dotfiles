@@ -32,6 +32,10 @@ set magic
 " set binary
 set lazyredraw
 set showcmd
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
 filetype plugin indent on
 syntax on
 colorscheme mustardnoise-railscasts
