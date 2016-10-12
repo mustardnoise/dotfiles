@@ -24,6 +24,8 @@ set relativenumber
 set noerrorbells
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 set nobackup nowritebackup noswapfile
 set magic
 " set noeol
@@ -280,4 +282,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Removes seach highlight
+map <Leader>/ :nohlsearch<CR>
 "------------------------------------------------------------------------------
