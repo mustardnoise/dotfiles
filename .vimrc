@@ -38,7 +38,7 @@ set undolevels=1000
 set undoreload=10000
 filetype plugin indent on
 syntax on
-colorscheme mustardnoise-railscasts
+colorscheme mustardnoise-colorscheme
 
 "---------------------------------------- AG ----------------------------------
 " https://github.com/rking/ag.vim
