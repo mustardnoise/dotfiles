@@ -331,4 +331,7 @@ map <right> <nop>
 
 " removes seach highlight
 map <Leader>/ :nohlsearch<CR>
+
+" adds frozen string literal comment
+map <Leader>fsl :call append(0, "# frozen_string_literal: true")<CR>
 "------------------------------------------------------------------------------
