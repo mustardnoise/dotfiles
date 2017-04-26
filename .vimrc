@@ -271,60 +271,61 @@ cnoreabbrev Ag FZFAg
 let mapleader = "\<Space>"
 
 " opens / closes NERDTree
-nmap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " https://github.com/janko-m/vim-test
 " runs the test nearest to the cursor
-nmap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
 " runs all tests in the current file
-nmap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>t :TestFile<CR>
 " runs the whole test suite
-nmap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
 " runs the last test
-nmap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
 " visits the test file from which you last run your tests
-nmap <silent> <Leader>g :TestVisit<CR>
+nnoremap <silent> <Leader>g :TestVisit<CR>
 
 " goes next buffer
-map <Leader>bn :bnext<CR>
+nnoremap <Leader>bn :bnext<CR>
 " goes to previous buffer
-map <Leader>bp :bprevious<CR>
+nnoremap <Leader>bp :bprevious<CR>
 
 " deletes buffer
-map <Leader>bd :Bdelete<CR>
+nnoremap <Leader>bd :Bdelete<CR>
 
 " runs `rails console` with foreman
-map <Leader>rc :call VimuxRunCommand("clear; foreman run rails console")<CR>
+nnoremap <Leader>rc :call
+  \ VimuxRunCommand("clear; foreman run rails console")<CR>
 
 " runs `rake db:migrate`
-map <Leader>rdm :Rake db:migrate<CR>
+nnoremap <Leader>rdm :Rake db:migrate<CR>
 
 " runs `rake routes`
-map <Leader>rr :call VimuxRunCommand("clear; bundle exec rake routes")<CR>
+nnoremap <Leader>rr :call VimuxRunCommand("clear; bundle exec rake routes")<CR>
 
  " zooms the runner pane (use <bind-key> z to restore runner pane)
- map <Leader>vz :call VimuxZoomRunner()<CR>
+nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
 
 " runs `bundle install`
-map <Leader>bi :Bundle install<CR>
+nnoremap <Leader>bi :Bundle install<CR>
 
 " runs `rubocop`
-map <Leader>ru :Rubocop<CR>
+nnoremap <Leader>ru :Rubocop<CR>
 
 " closes file
-map <Leader>q :q<CR>
+nnoremap <Leader>q :q<CR>
 
 " saves file
-map <Leader>w :w<CR>
+nnoremap <Leader>w :w<CR>
 
 " saves and closes file
-map <Leader>wq :wq<CR>
+nnoremap <Leader>wq :wq<CR>
 
 " opens gundo panel
 nnoremap <Leader>gdt :GundoToggle<CR>
 
 " git blame
-nmap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gb :Gblame<CR>
 
 " force to not use arrow keys
 map <up> <nop>
@@ -333,8 +334,11 @@ map <left> <nop>
 map <right> <nop>
 
 " removes seach highlight
-map <Leader>/ :nohlsearch<CR>
+nnoremap <Leader>/ :nohlsearch<CR>
 
 " adds frozen string literal comment
-map <Leader>fsl :call append(0, "# frozen_string_literal: true")<CR>
+nnoremap <Leader>fsl :call append(0, "# frozen_string_literal: true")<CR>
+
+" runs FZF
+nnoremap <C-P> :FZF<CR>
 "------------------------------------------------------------------------------
