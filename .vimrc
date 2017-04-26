@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  2 November 2016
+" Last Change:  26 April 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -341,4 +341,10 @@ nnoremap <Leader>fsl :call append(0, "# frozen_string_literal: true")<CR>
 
 " runs FZF
 nnoremap <C-P> :FZF<CR>
+
+" opens .vimrc in vertical split
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+
+" sources .vimrc
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 "------------------------------------------------------------------------------
