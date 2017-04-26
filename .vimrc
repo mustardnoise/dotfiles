@@ -52,6 +52,7 @@ set undofile " saves undo information in a file
 set undolevels=1000 " maximum number of changes that can be undone
 set undoreload=10000 " maximum number of lines to save for undo on a
                      " buffer reload
+set title " sets the title of the window
 filetype plugin indent on " switches on file type detection, with automatic
                           " indenting and settings
 syntax on " starts using syntax highlighting
@@ -102,6 +103,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'terryma/vim-multiple-cursors' " multiple selections
   Plug 'benmills/vimux' " interacts with tmux
   Plug 'kylef/apiblueprint.vim' " syntax highlighting/linting for api blueprint
+  Plug 'slashmili/alchemist.vim' " elixir integration into vim
 call plug#end()
 "------------------------------------------------------------------------------
 
@@ -250,6 +252,7 @@ set viminfo^=% " remembers info about open buffers on close
 
 "---------------------------------- DEVICONS ----------------------------------
 " https://github.com/ryanoasis/vim-devicons
+let g:webdevicons_enable = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 " forces extra padding in
                                                   " NERDTree so that the
                                                   " filetype icons line up
