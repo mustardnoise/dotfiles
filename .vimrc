@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  26 April 2017
+" Last Change:  4 May 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -59,7 +59,7 @@ syntax on " starts using syntax highlighting
 colorscheme mustardnoise-colorscheme " loads a specific color scheme
 "------------------------------------------------------------------------------
 
-"--------------------------------- VIM-PLUG -----------------------------------
+"--------------------------------- VIM-PLUG --------------------------------{{{
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
   Plug 'honza/vim-snippets' " snippets files for various programming languages
@@ -105,10 +105,10 @@ call plug#begin('~/.vim/bundle')
   Plug 'kylef/apiblueprint.vim' " syntax highlighting/linting for api blueprint
   Plug 'slashmili/alchemist.vim' " elixir integration into vim
 call plug#end()
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- AIRLINE -----------------------------------
+"---------------------------------- AIRLINE --------------------------------{{{
 " https://github.com/vim-airline/vim-airline
 let g:airline_powerline_fonts = 1 " enables/disables automatic population of
                                   " the `g:airline_symbols` dictionary with
@@ -116,10 +116,10 @@ let g:airline_powerline_fonts = 1 " enables/disables automatic population of
 let g:airline#extensions#tabline#enabled = 1 " enables/disables enhanced tabline
 let g:airline#extensions#tabline#fnamemod = ':t' " configures the formatting
                                                  " of filenames
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- NERDTree ----------------------------------
+"---------------------------------- NERDTree -------------------------------{{{
 " https://github.com/scrooloose/nerdtree
 " highlights filetypes
 function! NERDTreeHighlightFile(extension, fg, bg)
@@ -139,10 +139,10 @@ execute NERDTreeHighlightFile('haml',   '169',     'none')
 execute NERDTreeHighlightFile('css',    '2',       'none')
 execute NERDTreeHighlightFile('scss',   '99',      'none')
 execute NERDTreeHighlightFile('js',     '208',     'none')
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- SYNTASTIC ---------------------------------
+"---------------------------------- SYNTASTIC ------------------------------{{{
 " https://github.com/scrooloose/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -167,33 +167,33 @@ let g:loaded_syntastic_haml_haml_lint_checker = ['']
 " disables scss syntax checker
 let g:loaded_syntastic_scss_sass_checker = ['']
 let g:loaded_syntastic_scss_scss_lint_checker = ['']
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- GITGUTTER ---------------------------------
+"---------------------------------- GITGUTTER ------------------------------{{{
 " https://github.com/airblade/vim-gitgutter
 let g:gitgutter_override_sign_column_highlight = 0 " allows to customise sign
                                                    " column's background color
 let g:gitgutter_realtime = 0 " disables running in realtime
 let g:gitgutter_eager = 0 " disables running eagerly
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"-------------------------------- JAVASCRIPT ----------------------------------
+"-------------------------------- JAVASCRIPT -------------------------------{{{
 " https://github.com/othree/javascript-libraries-syntax.vim
 let g:used_javascript_libs = 'jquery,underscore,handlebars' " highlights js
                                                             " libraries
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"-------------------------------- INDENT LINE ---------------------------------
+"-------------------------------- INDENT LINE ------------------------------{{{
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_color_term = 239 " specifies indent line color
 let g:indentLine_faster = 1 " provides better performance
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"------------------------------- YOUCOMPLETEME --------------------------------
+"------------------------------- YOUCOMPLETEME -----------------------------{{{
 " https://github.com/Valloric/YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] " controls the key
                                                              " mappings used to
@@ -209,27 +209,27 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] " controls the
 let g:ycm_filetype_specific_completion_to_disable = {
       \ 'ruby': 1
       \}
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"--------------------------------- SUPERTAB -----------------------------------
+"--------------------------------- SUPERTAB --------------------------------{{{
 " https://github.com/ervandew/supertab
 let g:SuperTabDefaultCompletionType = '<C-TAB>' " sets the default
                                                 " completion type
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"----------------------------------- RUBY -------------------------------------
+"----------------------------------- RUBY ----------------------------------{{{
 " https://github.com/vim-ruby/vim-ruby
 let g:ruby_path = system('rvm current')
 let ruby_operators = 1 " highlights ruby operators
 let ruby_no_expensive = 1 " turns off the `end` keyword colorizing according
                           " to the opening statement of the block it closes
                           " (performance)
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"----------------------------------- FASTFOLD ---------------------------------
+"----------------------------------- FASTFOLD ------------------------------{{{
 " https://github.com/Konfekt/FastFold
 set foldmethod=indent " folding type
 set foldminlines=10 " minimum number of lines for a fold to be closed
@@ -237,37 +237,42 @@ set foldnestmax=20 " maximum fold depth
 let ruby_fold = 1 " enables ruby folding
 let javaScript_fold = 1 " enables js folding
 let vimsyn_folding = 'af' " enables vim script folding
-"------------------------------------------------------------------------------
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker foldminlines=3
+augroup END
+"---------------------------------------------------------------------------}}}
 
 
-"----------------------------------- BUFFER -----------------------------------
+"----------------------------------- BUFFER --------------------------------{{{
 " returns to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
 set viminfo^=% " remembers info about open buffers on close
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- DEVICONS ----------------------------------
+"---------------------------------- DEVICONS -------------------------------{{{
 " https://github.com/ryanoasis/vim-devicons
 let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 " forces extra padding in
                                                   " NERDTree so that the
                                                   " filetype icons line up
                                                   " vertically
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"------------------------------------- FZF ------------------------------------
+"------------------------------------- FZF ---------------------------------{{{
 let g:fzf_command_prefix = 'FZF' " gives the prefix to fzf commands
 " adds command alias
 cnoreabbrev Ag FZFAg
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
 
 
-"----------------------------------- MAPPINGS ---------------------------------
+"----------------------------------- MAPPINGS ------------------------------{{{
 let mapleader = "\<Space>"
 
 " opens / closes NERDTree
@@ -347,4 +352,4 @@ nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 
 " sources .vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
-"------------------------------------------------------------------------------
+"---------------------------------------------------------------------------}}}
