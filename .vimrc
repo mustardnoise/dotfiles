@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  4 May 2017
+" Last Change:  15 June 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -130,8 +130,9 @@ function! NERDTreeHighlightFile(extension, fg, bg)
 endfunction
 
 execute NERDTreeHighlightFile('rb',     '161',     'none')
-execute NERDTreeHighlightFile('md',     'blue',    'none')
-execute NERDTreeHighlightFile('yml',    'yellow',  'none')
+execute NERDTreeHighlightFile('rake',   '161',     'none')
+execute NERDTreeHighlightFile('md',     '12',      'none')
+execute NERDTreeHighlightFile('yml',    '11',      'none')
 execute NERDTreeHighlightFile('json',   '6',       'none')
 execute NERDTreeHighlightFile('html',   '216',     'none')
 execute NERDTreeHighlightFile('erb',    '41',      'none')
@@ -139,6 +140,8 @@ execute NERDTreeHighlightFile('haml',   '169',     'none')
 execute NERDTreeHighlightFile('css',    '2',       'none')
 execute NERDTreeHighlightFile('scss',   '99',      'none')
 execute NERDTreeHighlightFile('js',     '208',     'none')
+execute NERDTreeHighlightFile('ex',     '147',     'none')
+execute NERDTreeHighlightFile('exs',    '147',     'none')
 "---------------------------------------------------------------------------}}}
 
 
