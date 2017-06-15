@@ -53,6 +53,7 @@ set undolevels=1000 " maximum number of changes that can be undone
 set undoreload=10000 " maximum number of lines to save for undo on a
                      " buffer reload
 set title " sets the title of the window
+set scrolloff=1 " Min number of screen lines to keep above and below the cursor
 filetype plugin indent on " switches on file type detection, with automatic
                           " indenting and settings
 syntax on " starts using syntax highlighting
