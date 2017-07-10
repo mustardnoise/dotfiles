@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  15 June 2017
+" Last Change:  10 July 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -78,6 +78,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'tpope/vim-endwise' " helps to end certain structures automatically
   Plug 'tpope/vim-bundler' " support for ruby's bundler
   Plug 'tpope/vim-dotenv' " support for .env
+  Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim
+  Plug 'tpope/vim-projectionist' " project configuration (vim-test needs it)
   Plug 'ntpeters/vim-better-whitespace' " whitespace highlighting
   Plug 'vim-airline/vim-airline' " status/tabline
   Plug 'SirVer/ultisnips' " ultimate snippet solution
