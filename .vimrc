@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  10 July 2017
+" Last Change:  06 September 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -107,6 +107,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'benmills/vimux' " interacts with tmux
   Plug 'kylef/apiblueprint.vim' " syntax highlighting/linting for api blueprint
   Plug 'slashmili/alchemist.vim' " elixir integration into vim
+  Plug 'JamshedVesuna/vim-markdown-preview' " preview markdown files in browser
 call plug#end()
 "---------------------------------------------------------------------------}}}
 
@@ -275,6 +276,14 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 " forces extra padding in
 let g:fzf_command_prefix = 'FZF' " gives the prefix to fzf commands
 " adds command alias
 cnoreabbrev Ag FZFAg
+"---------------------------------------------------------------------------}}}
+
+
+"------------------------------- MARKDOWN PREVIEW --------------------------{{{
+let vim_markdown_preview_hotkey = '<Leader>mp'
+let vim_markdown_preview_github = 1
+let vim_markdown_preview_temp_file = 1
+let vim_markdown_preview_browser = 'Google Chrome'
 "---------------------------------------------------------------------------}}}
 
 
