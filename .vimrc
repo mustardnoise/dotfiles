@@ -66,6 +66,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'honza/vim-snippets' " snippets files for various programming languages
   Plug 'vim-ruby/vim-ruby' " configuration files for editing and compiling ruby
   Plug 'ngmy/vim-rubocop' " runs rubocop and displays the results in vim
+  Plug 'pangloss/vim-javascript' " js syntax highlighting and indentation
   Plug 'airblade/vim-gitgutter' " shows a git diff in the 'gutter' (sign column)
   Plug 'tpope/vim-surround' " parentheses, brackets, quotes etc
   Plug 'tpope/vim-rails' " ruby on rails power tools
@@ -99,6 +100,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'benmills/vimux' " interacts with tmux
   Plug 'slashmili/alchemist.vim' " elixir integration into vim
   Plug 'JamshedVesuna/vim-markdown-preview' " preview markdown files in browser
+  Plug 'ElmCast/elm-vim' " elm plugin
 call plug#end()
 "---------------------------------------------------------------------------}}}
 
