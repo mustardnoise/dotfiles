@@ -80,6 +80,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'vim-airline/vim-airline' " status/tabline
   Plug 'SirVer/ultisnips' " ultimate snippet solution
   Plug 'tomtom/tcomment_vim' " provides file-type sensible comments
+  Plug 'w0rp/ale' " asynchronous lint engine
   Plug 'ervandew/supertab' " performs insert mode completions with TAB
   Plug 'AndrewRadev/splitjoin.vim' " transition between multi and single-line
   Plug 'keith/rspec.vim' " rspec syntax highlighting
@@ -142,6 +143,18 @@ execute NERDTreeHighlightFile('exs',    '147',     'none')
 "---------------------------------------------------------------------------}}}
 
 
+"------------------------------------- ALE ---------------------------------{{{
+" https://github.com/w0rp/ale
+let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = { 'ruby': ['rubocop'], 'elixir': ['mix_format'] }
+let g:ale_linters = {
+\  'ruby': ['rubocop', 'ruby', 'brakeman'],
+\  'elixir': ['credo'],
+\  'elm': ['format'],
+\  'javascript': ['eslint']
+\}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 "---------------------------------------------------------------------------}}}
 
 
