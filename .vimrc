@@ -1,5 +1,5 @@
 " Maintainer:   Eugene Kruglov <mustardnoise>
-" Last Change:  06 September 2017
+" Last Change:  09 November 2017
 
 "------------------------------------------------------------------------------
 filetype off " switches file type detection, without syntax highlighting
@@ -64,16 +64,11 @@ colorscheme mustardnoise-colorscheme " loads a specific color scheme
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
   Plug 'honza/vim-snippets' " snippets files for various programming languages
-  Plug 'ecomba/vim-ruby-refactoring' " refactoring tool for ruby
   Plug 'vim-ruby/vim-ruby' " configuration files for editing and compiling ruby
   Plug 'ngmy/vim-rubocop' " runs rubocop and displays the results in vim
-  Plug 'jelera/vim-javascript-syntax' " enhanced javascript syntax file
   Plug 'airblade/vim-gitgutter' " shows a git diff in the 'gutter' (sign column)
   Plug 'tpope/vim-surround' " parentheses, brackets, quotes etc
   Plug 'tpope/vim-rails' " ruby on rails power tools
-  Plug 'tpope/vim-jdaddy' " json manipulation and pretty printing
-  Plug 'tpope/vim-heroku' " heroku toolbelt wrapper
-  Plug 'tpope/vim-haml' " runtime files for haml, sass, and scss
   Plug 'tpope/vim-fugitive' " git wrapper
   Plug 'tpope/vim-endwise' " helps to end certain structures automatically
   Plug 'tpope/vim-bundler' " support for ruby's bundler
@@ -83,15 +78,12 @@ call plug#begin('~/.vim/bundle')
   Plug 'ntpeters/vim-better-whitespace' " whitespace highlighting
   Plug 'vim-airline/vim-airline' " status/tabline
   Plug 'SirVer/ultisnips' " ultimate snippet solution
-  Plug 'edkolev/tmuxline.vim' " tmux statusline generator
   Plug 'tomtom/tcomment_vim' " provides file-type sensible comments
-  Plug 'scrooloose/syntastic' " syntax checking
   Plug 'ervandew/supertab' " performs insert mode completions with TAB
   Plug 'AndrewRadev/splitjoin.vim' " transition between multi and single-line
   Plug 'keith/rspec.vim' " rspec syntax highlighting
   Plug 'scrooloose/nerdtree' " tree explorer
   Plug 'Xuyuanp/nerdtree-git-plugin' " git status flags for NERDTree
-  Plug 'othree/javascript-libraries-syntax.vim' " js libs syntax highlighting
   Plug 'Yggdroot/indentLine' " displays the indention levels
   Plug 'Konfekt/FastFold' " speeds up folds
   Plug 'Raimondi/delimitMate' " auto-completion for quotes, parens, brackets
@@ -105,7 +97,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'janko-m/vim-test' " wrapper for running tests
   Plug 'terryma/vim-multiple-cursors' " multiple selections
   Plug 'benmills/vimux' " interacts with tmux
-  Plug 'kylef/apiblueprint.vim' " syntax highlighting/linting for api blueprint
   Plug 'slashmili/alchemist.vim' " elixir integration into vim
   Plug 'JamshedVesuna/vim-markdown-preview' " preview markdown files in browser
 call plug#end()
@@ -149,31 +140,6 @@ execute NERDTreeHighlightFile('exs',    '147',     'none')
 "---------------------------------------------------------------------------}}}
 
 
-"---------------------------------- SYNTASTIC ------------------------------{{{
-" https://github.com/scrooloose/syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1 " tells syntastic to always stick
-                                             " any detected errors
-let g:syntastic_auto_loc_list = 0 " error window won't be automatically opened
-                                  " when errors are detected, and closed when
-                                  " none are detected.
-let g:syntastic_check_on_open = 0 " active mode won't run syntax checks when
-                                  " buffers are first loaded
-let g:syntastic_check_on_wq = 0 " skips syntax checks run whenever buffers
-                                " are written to disk
-
-let g:syntastic_javascript_checkers = ['jshint']
-
-" disables haml syntax checker
-let g:loaded_syntastic_haml_haml_checker = ['']
-let g:loaded_syntastic_haml_haml_lint_checker = ['']
-
-" disables scss syntax checker
-let g:loaded_syntastic_scss_sass_checker = ['']
-let g:loaded_syntastic_scss_scss_lint_checker = ['']
 "---------------------------------------------------------------------------}}}
 
 
@@ -183,13 +149,6 @@ let g:gitgutter_override_sign_column_highlight = 0 " allows to customise sign
                                                    " column's background color
 let g:gitgutter_realtime = 0 " disables running in realtime
 let g:gitgutter_eager = 0 " disables running eagerly
-"---------------------------------------------------------------------------}}}
-
-
-"-------------------------------- JAVASCRIPT -------------------------------{{{
-" https://github.com/othree/javascript-libraries-syntax.vim
-let g:used_javascript_libs = 'jquery,underscore,handlebars' " highlights js
-                                                            " libraries
 "---------------------------------------------------------------------------}}}
 
 
