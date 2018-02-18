@@ -1,0 +1,9 @@
+custom.el
+.mc-lists.el
+ac-comphist.dat
+auto-save-list/
+elpa/
+emacs-backups/
+eshell/
+undo/
+var/
