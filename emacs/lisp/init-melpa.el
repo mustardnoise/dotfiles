@@ -69,7 +69,10 @@
   :config
   (global-undo-tree-mode)
   (setq undo-tree-auto-save-history t)
-  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))))
+  (defvar undo-directory (concat user-emacs-directory "undo"))
+  (if (not (file-exists-p undo-directory))
+      (make-directory undo-directory t))
+  (setq undo-tree-history-directory-alist `(("." . ,undo-directory))))
 
 (use-package disable-mouse
   :diminish (disable-mouse-mode global-disable-mouse-mode)
