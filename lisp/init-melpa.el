@@ -40,6 +40,7 @@
 (use-package smartparens
   :config
   (add-hook 'prog-mode-hook #'smartparens-mode))
+(require 'smartparens-config)
 
 (use-package helm)
 
