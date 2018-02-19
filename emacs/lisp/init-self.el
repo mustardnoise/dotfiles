@@ -10,7 +10,7 @@
 
 (defvar backup-directory (concat user-emacs-directory "emacs-backups"))
 (if (not (file-exists-p backup-directory))
-	(make-directory backup-directory t))
+    (make-directory backup-directory t))
 (setq backup-directory-alist `(("." . ,backup-directory)))
 
 (setq auto-save-default nil)
