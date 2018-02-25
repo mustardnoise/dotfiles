@@ -47,6 +47,11 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
+
 (provide 'init-self)
 
 ;;; init-self.el ends here
