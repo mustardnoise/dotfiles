@@ -128,6 +128,9 @@
 (use-package telephone-line
   :init (telephone-line-mode))
 
+(use-package embrace
+  :init (global-set-key (kbd "C-,") #'embrace-commander))
+
 (provide 'init-melpa)
 
 ;;; init-melpa.el ends here
