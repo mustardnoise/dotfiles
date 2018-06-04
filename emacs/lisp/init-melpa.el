@@ -121,7 +121,7 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-(use-package git-gutter
+(use-package git-gutter-fringe
   :diminish git-gutter-mode
   :config (global-git-gutter-mode))
 
