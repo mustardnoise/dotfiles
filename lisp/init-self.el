@@ -53,6 +53,18 @@
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<down>"))
 
+(defun add-ruby-magic-comment ()
+  "Add ruby magic comment to beginning of the file."
+  (interactive)
+  (when (eq major-mode 'enh-ruby-mode)
+    (push-mark)
+    (goto-char (point-min))
+    (let ((magic-comment "# frozen_string_literal: true"))
+      (unless (search-forward magic-comment nil t)
+        (insert (concat magic-comment "\n\n"))))
+    (goto-char (mark-marker))
+    (pop-mark)))
+
 (provide 'init-self)
 
 ;;; init-self.el ends here
