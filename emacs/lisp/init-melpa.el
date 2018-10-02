@@ -131,6 +131,12 @@
 (use-package embrace
   :init (global-set-key (kbd "C-,") #'embrace-commander))
 
+(use-package transpose-frame)
+
+(use-package restclient)
+
+(use-package haskell-mode)
+
 (provide 'init-melpa)
 
 ;;; init-melpa.el ends here
