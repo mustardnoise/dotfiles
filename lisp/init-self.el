@@ -7,6 +7,7 @@
 ;;; Code:
 
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 (defvar backup-directory (concat user-emacs-directory "emacs-backups"))
 (if (not (file-exists-p backup-directory))
