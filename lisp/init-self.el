@@ -34,6 +34,8 @@
 (defvar display-time-mail-string "")
 (display-time-mode t)
 
+(display-battery-mode 1)
+
 (require 'linum)
 (setq linum-format " %d ")
 (global-linum-mode 1)
