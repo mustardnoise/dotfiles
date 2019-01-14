@@ -137,6 +137,16 @@
 
 (use-package haskell-mode)
 
+(use-package rust-mode
+  :bind (:map rust-mode-map ("TAB" . company-indent-or-complete-common))
+  :config
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode)
+  (setq rust-format-on-save t))
+
 (provide 'init-melpa)
 
 ;;; init-melpa.el ends here
