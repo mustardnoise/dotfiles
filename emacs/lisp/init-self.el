@@ -67,6 +67,10 @@
     (goto-char (mark-marker))
     (pop-mark)))
 
+;; (load (expand-file-name "~/.quicklisp/slime-helper.el"))
+;; (defvar inferior-lisp-program)
+;; (setq inferior-lisp-program "sbcl")
+
 (provide 'init-self)
 
 ;;; init-self.el ends here
