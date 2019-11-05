@@ -63,7 +63,12 @@
   :diminish company-mode
   :init (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read))
+
+(use-package forge
+  :after magit)
 
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -84,6 +89,20 @@
   :config
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-character ?\⫶))
+
+(use-package ivy
+  :config
+  (counsel-mode +1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
+
+(use-package projectile
+  :config
+  (projectile-mode +1)
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-switch-project-action #'projectile-dired)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
 (use-package helm-projectile
   :config (helm-projectile-on))
@@ -146,6 +165,8 @@
   (add-hook 'racer-mode-hook #'eldoc-mode)
   (add-hook 'racer-mode-hook #'company-mode)
   (setq rust-format-on-save t))
+
+(setq flycheck-python-pycompile-executable "python3")
 
 (provide 'init-melpa)
 
