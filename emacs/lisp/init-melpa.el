@@ -142,7 +142,10 @@
 
 (use-package git-gutter-fringe
   :diminish git-gutter-mode
-  :config (global-git-gutter-mode))
+  :config
+  (global-git-gutter-mode)
+  (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+  (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk))
 
 (use-package telephone-line
   :init (telephone-line-mode))
