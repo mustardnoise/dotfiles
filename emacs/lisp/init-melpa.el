@@ -193,6 +193,14 @@
   :init
   (gitlab-ci-mode-flycheck-enable))
 
+(use-package dockerfile-mode)
+
+(use-package docker-compose-mode)
+
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+
 (setq flycheck-python-pycompile-executable "python3")
 
 (provide 'init-melpa)
