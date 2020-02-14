@@ -68,6 +68,8 @@
   :config
   (setq flycheck-elixir-credo-strict t))
 
+(use-package flycheck-rust)
+
 (use-package company
   :diminish company-mode
   :init (add-hook 'after-init-hook 'global-company-mode))
@@ -171,6 +173,8 @@
 (use-package restclient)
 
 (use-package haskell-mode)
+
+(use-package racer)
 
 (use-package rust-mode
   :bind (:map rust-mode-map ("TAB" . company-indent-or-complete-common))
