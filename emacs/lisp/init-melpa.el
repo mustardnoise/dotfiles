@@ -186,6 +186,13 @@
   (add-hook 'racer-mode-hook #'company-mode)
   (setq rust-format-on-save t))
 
+(use-package gitlab-ci-mode)
+
+(use-package gitlab-ci-mode-flycheck
+  :after flycheck gitlab-ci-mode
+  :init
+  (gitlab-ci-mode-flycheck-enable))
+
 (setq flycheck-python-pycompile-executable "python3")
 
 (provide 'init-melpa)
