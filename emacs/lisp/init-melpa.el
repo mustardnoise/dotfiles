@@ -99,6 +99,10 @@
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-character ?\⫶))
 
+(use-package counsel)
+
+(use-package counsel-tramp)
+
 (use-package ivy
   :config
   (counsel-mode +1)
