@@ -31,8 +31,15 @@
    'auto-mode-alist
    '("\\(?:\\.rb\\|ru\\|rake\\|gemspec\\|/\\(?:Gem\\|Rake\\)file\\)\\'" . enh-ruby-mode))
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  (add-hook 'enh-ruby-mode-hook 'minitest-mode)
   (setq enh-ruby-deep-indent-paren nil)
   (setq enh-ruby-add-encoding-comment-on-save nil))
+
+(use-package minitest
+  :config
+  (setq minitest-use-rails t)
+  (setq minitest-use-docker t)
+  (setq minitest-docker-container "dev"))
 
 (use-package fill-column-indicator
   :config
