@@ -23,6 +23,8 @@
 (setq use-package-always-ensure t)
 (require 'diminish)
 
+(use-package diminish)
+
 (use-package enh-ruby-mode
   :config
   (add-to-list
