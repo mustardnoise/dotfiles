@@ -201,6 +201,8 @@
   :ensure t
   :bind ("C-c d" . docker))
 
+(use-package bundler)
+
 (setq flycheck-python-pycompile-executable "python3")
 
 (provide 'init-melpa)
