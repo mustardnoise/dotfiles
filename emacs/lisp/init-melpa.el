@@ -203,6 +203,10 @@
 
 (use-package bundler)
 
+(use-package vue-mode
+  :config
+  (add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil))))
+
 (setq flycheck-python-pycompile-executable "python3")
 
 (provide 'init-melpa)
