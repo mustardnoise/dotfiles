@@ -23,6 +23,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq-default fill-column 80)
+(setq-default js-indent-level 2)
 
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
