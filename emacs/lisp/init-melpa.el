@@ -31,15 +31,23 @@
    'auto-mode-alist
    '("\\(?:\\.rb\\|ru\\|rake\\|gemspec\\|/\\(?:Gem\\|Rake\\)file\\)\\'" . enh-ruby-mode))
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'minitest-mode)
   (setq enh-ruby-deep-indent-paren nil)
   (setq enh-ruby-add-encoding-comment-on-save nil))
+
+(defadvice minitest--run-command (around minitest--run-command-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    (if (fboundp 'rvm-activate-corresponding-ruby)
+    (rvm-activate-corresponding-ruby))
+    ad-do-it))
+
+(ad-activate 'minitest--run-command)
 
 (use-package minitest
   :config
   (setq minitest-use-rails t)
-  (setq minitest-use-docker t)
-  (setq minitest-docker-container "dev"))
+  :bind-keymap
+  ("C-c ," . minitest-mode-map))
 
 (use-package fill-column-indicator
   :config
@@ -103,7 +111,11 @@
 
 (use-package counsel)
 
-(use-package counsel-tramp)
+(use-package counsel-tramp
+  :config
+  (global-set-key (kbd "C-c s") 'counsel-tramp)
+  (setq make-backup-files nil)
+  (setq create-lockfiles nil))
 
 (use-package ivy
   :config
@@ -127,7 +139,31 @@
   :after inf-ruby company
   :init (push 'company-robe company-backends))
 
-(use-package alchemist)
+(use-package elixir-mode
+  :ensure t
+  :diminish (elixir-mode)
+  :commands projectile-project-p
+  :init
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+  (add-hook 'elixir-format-hook (lambda ()
+                                  (if (projectile-project-p)
+                                      (setq elixir-format-arguments
+                                            (list "--dot-formatter"
+                                                  (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
+                                    (setq elixir-format-arguments nil)))))
+
+(use-package mix
+  :ensure t
+  :diminish (mix)
+  :init (add-hook 'elixir-mode-hook 'mix-minor-mode)
+  :config
+  (setq compilation-scroll-output t))
+
+(use-package exunit
+  :ensure t
+  :diminish (exunit)
+  :init (add-hook 'elixir-mode-hook 'exunit-mode))
 
 (use-package rvm
   :init (rvm-use-default)
@@ -135,8 +171,16 @@
   (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
     (rvm-activate-corresponding-ruby)))
 
+(defadvice rspec-compile (around rspec-compile-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+
+(ad-activate 'rspec-compile)
+
 (use-package rspec-mode
   :diminish rspec-mode
+  :init (add-hook 'after-init-hook 'inf-ruby-switch-setup)
   :config
   (setq rspec-use-rvm t)
   (setq compilation-scroll-output t))
@@ -206,6 +250,12 @@
 (use-package vue-mode
   :config
   (add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil))))
+
+(use-package csv-mode)
+
+(use-package kubel
+  :ensure t
+  :diminish (kubel))
 
 (setq flycheck-python-pycompile-executable "python3")
 
