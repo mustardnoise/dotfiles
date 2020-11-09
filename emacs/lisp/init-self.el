@@ -22,7 +22,7 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(setq-default fill-column 80)
+(setq-default fill-column 120)
 (setq-default js-indent-level 2)
 
 (scroll-bar-mode -1)
@@ -71,6 +71,9 @@
 ;; (load (expand-file-name "~/.quicklisp/slime-helper.el"))
 ;; (defvar inferior-lisp-program)
 ;; (setq inferior-lisp-program "sbcl")
+
+(setq auth-sources
+      '((:source "~/.authinfo.gpg")))
 
 (provide 'init-self)
 
