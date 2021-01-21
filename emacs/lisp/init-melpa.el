@@ -46,6 +46,8 @@
 (use-package minitest
   :config
   (setq minitest-use-rails t)
+  (setq minitest-use-docker t)
+  (setq minitest-docker-container "dev")
   :bind-keymap
   ("C-c ," . minitest-mode-map))
 
