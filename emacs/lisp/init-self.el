@@ -24,6 +24,7 @@
 (setq-default tab-width 2)
 (setq-default fill-column 120)
 (setq-default js-indent-level 2)
+(setq-default css-indent-offset 2)
 
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
