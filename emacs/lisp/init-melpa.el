@@ -251,6 +251,9 @@
   :config
   (add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil))))
 
+(use-package typescript-mode
+  :config
+  (setq typescript-indent-level 2))
 (use-package csv-mode)
 
 (use-package kubel
