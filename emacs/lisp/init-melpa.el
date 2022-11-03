@@ -267,9 +267,25 @@
 
 (use-package bundler)
 
-(use-package vue-mode
+;; (use-package vue-mode)
+;;   :config
+;;   (add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil))))
+
+(use-package web-mode
+  :mode "\\.vue$"
   :config
-  (add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil))))
+  (setq web-mode-code-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-markup-indent-offset 2
+        ;; web-mode-sql-indent-offset 2
+        web-mode-script-padding 0       ; start script in col 0
+        ;; web-mode-enable-current-column-highlight t
+        )
+  ;; :custom-face
+  ;; light color for highlighting the current HTML element's column
+  ;; (web-mode-current-column-highlight-face
+  ;;                     ((t (:background "#f0f0f0"))))
+  )
 
 (use-package typescript-mode
   :config
