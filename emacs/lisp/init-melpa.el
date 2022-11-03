@@ -205,8 +205,8 @@
   (setq rspec-use-rvm t)
   (setq compilation-scroll-output t))
 
-(use-package linum-relative
-  :config (linum-relative-global-mode))
+;; (use-package linum-relative
+;;   :config (linum-relative-global-mode))
 
 (use-package magit-gh-pulls
   :init (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
