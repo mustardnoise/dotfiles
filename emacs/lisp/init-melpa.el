@@ -166,6 +166,25 @@
   :diminish (exunit)
   :init (add-hook 'elixir-mode-hook 'exunit-mode))
 
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  :diminish (lsp-mode)
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path (concat (getenv "home") "/Projects/github/elixir-ls/releases"))
+  :config
+  (setq lsp-headerline-breadcrumb-enable nil))
+
+;; (use-package dap-mode
+;;   :ensure t
+;;   :diminish t
+;;   :after lsp-mode
+;;   :config
+;;   (dap-ui-mode 1)
+;;   (dap-mode 1))
+
 (use-package rvm
   :init (rvm-use-default)
   :config
