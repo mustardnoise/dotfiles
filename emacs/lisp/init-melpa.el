@@ -130,8 +130,7 @@
   (projectile-mode +1)
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action #'projectile-dired)
-  :bind-keymap
-  ("C-c p" . projectile-command-map))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package helm-projectile
   :config (helm-projectile-on))
