@@ -1,0 +1,9 @@
+background = 282828
+cursor-style = block
+font-family = Berkeley Mono
+# font-size = 14
+fullscreen = true
+macos-option-as-alt = true
+shell-integration = zsh
+shell-integration-features = no-cursor
+theme = GruvboxDark

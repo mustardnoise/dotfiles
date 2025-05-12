@@ -1,0 +1,4 @@
+.dir-locals.el
+.rake_tasks
+tags
+.ash_history
